@@ -1,0 +1,25 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", :'xml:lang' => "en"}
+  %head
+    %meta{'http-equiv' => "Content-Type", :content => "text/html;charset=utf-8"}
+    %meta{:content => 'en', :name => 'lang'}
+    %meta{:name => 'robots', :content => 'noindex, nofollow' }
+    %meta{:content => "Don't click here if you want a bulky, mediocre SMS solution. We design, develop, deploy, and maintain well built SMS and mobile applications.", :name => 'description'}
+    %meta{:content => 'recess mobile, text message, sms, applications, products, development, integration', :name => 'keywords'}
+    %meta{:content => 'Recess Mobile, Inc.', :name => 'author'}    
+    = stylesheet_link_tag 'recess/screen'
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js', 'recess/jq.init', 'recess/jquery.cycle.all.min', 'recess/jquery.lightbox-0.5.min', 'recess/jquery.localscroll-1.2.7-min', 'recess/jquery.scrollTo-1.4.1-min'
+                             
+    %title= page_title
+    = yield :html_head
+  %body.home
+    = cms_toolbar 
+    #content
+      #header
+        #logo
+          %h1= link_to 'Recess Mobile', '/'
+          %h2= link_to 'SMS application development &amp; integration', '/'
+      -#= render_breadcrumbs
+      = render_menu 
+      %h1= page_title
+      = container :main

@@ -1,0 +1,720 @@
+!blueprint_grid_columns = 18
+!blueprint_font_family = "Helvetica Neue", "Helvetica", "Arial", "sans-serif"
+!blueprint_fixed_font_family = "Helvetica Neue", "Helvetica", "Arial", "sans-serif"
+
+!holmesred = #c14032
+!textgr = #231f20
+!lightgr = #888
+!mlightgr = #929292
+!slightgr = #c1c4c4
+!darkgr = #4F4A4A
+!hover = #5e5e5e
+!sub = #636363
+!nav_bg = #E3E3E3
+!blueprint_font_family = "Helvetica Neue", "Hevetica", "Arial", "sans-serif"
+!header_font = "Futura Std", "Futura", "Century Gothic", "AppleGothic", "sans-serif"
+
+@import compass/reset.sass
+@import blueprint.sass
+@import blueprint/modules/scaffolding.sass
+@import compass/utilities.sass
+@import blueprint/modules/debug.sass
+@import blueprint/modules/fancy_type.sass
+@import blueprint/modules/typography.sass
+@import compass/utilities/text.sass
+
+.showgrid
+  :background-image url(/images/grid.png) !important
+
++blueprint
+
+
+body
+  :background #fff
+  :color #000
+  :font-family= !blueprint_font_family
+  +blueprint-typography
+  a
+    :color #000
+  a:hover, a:active
+    :color= !hover
+  a:hover
+    :text-decoration underline
+  h1, h2, h3, h4, h5
+    :font-family= !header_font
+  h2
+    :font-weight 700
+  h3
+    :font-weight 400
+    :font-size 1.8em
+    :line-height 1.3em
+  h4
+    :font-size 1.2em
+    :font-weight 700
+  p
+    :font-size 1.1em
+    :line-height 1.4em
+  table
+    :font-family= !blueprint_font_family
+    th
+      :background-color= !lightgr
+  h5
+    :font-weight 400
+  strong
+    :color= !darkgr
+  form
+    input[type="text"]
+      :border= 1px "solid" !mlightgr
+      &:focus
+        :background-color #FFFFCC
+    input[type="submit"]
+      :background-color #EFEFEF
+      :padding 3px
+    input#goog-wm-qt
+      :margin-right 1em
+  blockquote
+    :font-style normal
+    :border-left= 1px "solid" #CCC
+    :padding-left 1em
+  .cantfind
+    :color= !holmesred
+  .pagination
+    +column(4, true)
+    :margin 2em 0
+    :float left
+    a
+      :margin 2em 0
+      :font-size 2em
+  #content
+    :margin 0 auto
+    :height 100% auto
+    :padding-top 30px
+    +container
+    +prepend(1)
+    +append(1)
+    #header
+      +container
+      :float left
+      :margin-bottom 2em
+      #logo
+        +column(7)
+        +append(3)
+        a
+          :display block
+          :width 280px
+        h1
+          :margin 0
+          :padding 0
+          a
+            +replace-text("/images/text-sprites.png", 0, -895px)
+            :height 36px
+        h2
+          :margin 0
+          :padding 0
+          a
+            +replace-text("/images/text-sprites.png", 0, -929px)
+            :height 20px
+      #nav
+        +column(8, true)
+        ul.sub
+          +horizontal-list()
+          +prepend(1)
+          :height 1%
+          a
+            :height 25px
+            :display block
+            :margin-right 7px
+            +replace-text("/images/text-sprites.png", "top", "left")
+          li
+            +horizontal-list()
+            a.press
+              :width 40px
+              :margin-left 7px
+              :background-position -574px -902px
+              &:hover
+                :background-position -574px -881px
+            a.about
+              :width 59px
+              :background-position -615px -902px
+              &:hover
+                :background-position -615px -881px
+            a.team
+              :width 40px
+              :background-position -674px -902px
+              &:hover
+                :background-position -674px -881px
+            a.contact
+              :width 52px
+              :background-position -714px -902px
+              &:hover
+                :background-position -714px -881px
+            a.blog
+              :width 32px
+              :background-position -768px -902px
+              :margin-right 0
+              &:hover
+                :background-position -768px -881px
+          li.active a.press
+            :background-position -574px -881px
+          li.active a.about
+            :background-position -615px -881px
+          li.active a.team
+            :background-position -674px -881px
+          li.active a.contact
+            :background-position -714px -881px
+          li.active a.blog
+            :background-position -768px -881px
+        ul.main
+          +horizontal-list()
+          :margin-left 29px
+          a
+            :height 37px
+            :display block
+            :padding 0
+            :margin-top -0.2em
+            :margin-bottom 2em
+            +replace-text("/images/text-sprites.png")
+          li
+            +horizontal-list()
+            a.products
+              :width 90px
+              :background-position -508px -922px
+              &:hover
+                :background-position -821px -909px
+            a.technology
+              :width 110px
+              :background-position -602px -922px
+              &:hover
+                :background-position -915px -909px
+            a.services
+              :width 77px
+              :background-position -720px -922px
+              &:hover
+                :background-position -1033px -909px
+          li.active a.products
+            :background-position -821px -909px
+          li.active a.technology
+            :background-position -915px -909px
+          li.active a.services
+            :background-position -1033px -909px
+    #cycler
+      +column(18, true)
+      :overflow hidden
+      :float left
+      ul
+        :height 145px
+        :background #FFF
+        +column(18, true)
+        li
+          a
+            :display block
+            :height 91px
+            :margin-top 25px
+            +replace-text("/images/text-sprites.png")
+          a.antitow
+            :background-position 120px -740px
+            :width 630px
+            &:hover
+              :background-position -513px -740px
+              :margin 25px 150px
+              :width 450px
+          a.recess
+            :background-position 190px -650px
+            :width 630px
+            &:hover
+              :background-position -380px -650px
+              :margin 25px 10px
+              :width 610px
+          a.privatelabelsms
+            :background-position 160px -560px
+            :width 630px
+            &:hover
+              :background-position -480px -560px
+              :margin 25px 100px
+              :width 560px
+          a.shortcode
+            :background-position 23px -465px
+            :width 690px
+          a.two-way
+            :background-position 103px -372px
+            :width 690px
+          a.vampireads
+            :background-position 12px -280px
+            :width 690px
+            &:hover
+              :background url(/images/vampireads.png) 0 0
+              :width 742px
+              :margin 0
+              :height 122px
+          a.chat
+            :background-position 220px -185px
+            :width 630px
+          a.survey
+            :background-position 160px -92px
+            :width 630px
+          a.business-cards
+            :background-position -520px -2px
+            :margin 25px 180px
+            :width 380px
+            &:hover
+              :background-position -960px -2px
+      ul, li, ul li
+        +no-bullets
+        :padding 0
+        :margin 0
+    #cycler-nav
+      :margin-bottom 5em
+      :float left
+      a
+        :display block
+        +replace-text("/images/text-sprites.png")
+        :width 18px
+        :height 18px
+      .previous
+        +column(1)
+        +prepend(16)
+        a
+          :background-position 10px -848px
+      .next
+        +column(1, true)
+        a
+          :background-position -20px -848px
+    .columns
+      :float left
+      h4
+        +replace-text("/images/text-sprites.png")
+        :height 20px
+        :margin-bottom 0.7em
+      p
+        :margin-bottom 0.7em
+        :color= !mlightgr
+        a
+          :margin-bottom 7em
+          :display block
+          :color= !sub
+        a:hover
+          :color #000
+        a:before
+          :content "> "
+          :text-decoration none
+      .col1 h4
+        :background-position 0px -877px
+        :width 95px
+      .col2 h4
+        :background-position -100px -877px
+        :width 75px
+      .col3 h4
+        :background-position -180px -877px
+        :width 65px
+      .col1
+        +column(5)
+        +append(2)
+      .col2
+        +column(5)
+        +append(1)
+      .col3
+        +column(5, true)
+body.sub, body.main
+  #content
+    ul, li, h5, a, ul li a, p, h3
+      :color= !sub
+      :font-weight 700
+    ul, ol
+      :padding-left 0
+    a:hover
+      :color #000
+    a:visited
+      :color #222
+    h1, h2, h3, h4, h5
+      :font-family= !blueprint_font_family
+    h3
+      :font-size 1.1em
+      :font-weight 400
+      strong
+        :font-weight 700
+    .upper
+      :float left
+      :margin-bottom 3em
+    .page-header
+      +column(8)
+      +append(1)
+      h2
+        +replace-text("/images/text-sprites.png")
+        :height 54px
+        :width 320px
+        :margin-bottom 0.5em
+        &.products
+          :background-position -997px -774px
+        &.technology
+          :background-position -997px -706px
+          :height 64px
+        &.services
+          :background-position -997px -651px
+      h3
+        :font-weight 700
+    .product-list
+      +column(7, true)
+      +prepend(2)
+      :float left
+      a:hover, a:visited
+        :color #000
+      ul, li
+        +no-bullets
+      ul li:before
+        :content "> "
+      ul
+        :margin 0
+        li
+          :margin-bottom 0.25em
+      h5
+        :margin-bottom 0.1em
+        :font-size 1.1em
+    .lower
+      :margin-bottom 0
+      .item
+        +column(18, true)
+        :margin-bottom 4em
+        .item-image
+          +column(8)
+          :overflow hidden
+          :display block
+          :height 236px
+          // Setting a fixed width to accomodate a 1px border. Alternatively, can stack containers.
+          :width 308px
+          :border= 1px "solid" !slightgr
+        .item-description
+          +prepend(1)
+          +column(9, true)
+          h3
+            :font-size 2.0em
+            :font-weight 700
+            :color #000
+            :margin-bottom 0.5em
+            :margin-top -0.2em
+          h4
+            :color= !sub
+          h4:before
+            :content "> "
+            :color= !sub
+          h4 a
+            :color= !darkgr
+            &:hover
+              :color #000
+          p
+            :font-weight 400
+        .item-description.services
+          +prepend(0)
+          +column(14, true)
+        .item-description.team
+          p
+            :margin 1em 0
+body.sub
+  #content
+    .upper
+      :margin-bottom 1em
+      .fat-headline
+        +column(18, true)
+        h2
+          :font-weight 700
+          :line-height 0.9em
+          &.about, &.contact
+            :font-size 3.0em
+            :text-align center
+          &.press, &.team, &.blog
+            :font-size 2.2em
+    .lower
+      :float left
+      .item
+        :margin-bottom 2em
+        .item-image
+          +column(3)
+          :height 107px
+        .item-description
+          +prepend(0)
+          +column(14, true)
+          p
+            :margin-bottom 0.3em
+          ul, li
+            +no-bullets
+          ul li:before
+            :content "> "
+          ul
+            :margin 0
+            li
+              :margin-bottom 0.25em
+          h3
+            :font-weight 700
+            :line-height 0.9em
+            :margin-top 0
+            &.team
+              :font-size 1.1em
+              :color= !sub
+            &.press
+              :font-size 2.1em
+        .item-description.press, .item-description.about
+          +column(18, true)
+      .contactForm
+        // +column(11)
+        :width 400px
+        :margin-right 0
+        :float left
+      .contactDetails
+        +prepend(1)
+        +column(6, true)
+        h4
+          :display inline
+        p
+          :margin-bottom 0.5em
+      .googlevoice
+        :margin 1em 0 2em 0
+body.blog, body.press
+  #content
+    .excerptOn
+      :text-decoration underline
+      :cursor pointer
+    .upper .fat-headline
+      :margin-bottom 1em
+    .lower
+      :margin-bottom 0
+      +column(13)
+      +append(1)
+      .blog-content, .press-content
+        :margin-bottom 3em
+        .entry-header
+          +column(18, true)
+          h2
+            :font-size 2.8em
+            :letter-spacing -1px
+            :display inline
+            :line-height 1em
+            a
+              :text-decoration none
+              :font-weight 700
+              :color #222
+            a:hover
+              :text-decoration underline
+          h2.pagetitle
+            :font-size 2.2em
+          .author, h2.author a
+            :font-weight 700
+            :color= !mlightgr
+            :text-transform capitalize
+          .date, h2.date a
+            :font-weight 400
+            :color #bcbcbc
+            :white-space nowrap
+        .entry-content
+          :margin-top 1em
+          :overflow hidden
+          p, ul li, ol li
+            :font-weight 400
+            :margin-bottom 1em
+            :color #222
+            :font-size 1.1em
+            :line-height 1.75em
+          ul > li, ol > li
+            :font-size 1em
+          p a, ul a, ol a, a
+            :font-weight 400
+            :color= !textgr
+            &:hover
+              :color= !sub
+          ol, ol p, ol li, ol li p
+            :font-size 1em
+          h3
+            :font-weight 700
+            :font-size 1.3em
+            :color= !sub
+          h3.related_post_title
+            :margin-top 3em
+      .blog-content
+        +column(14, true)
+        .entry-header
+          +column(14, true)
+          :display block
+          :margin 1em 0
+        .entry-content
+          +column(13, true)
+          :overflow hidden
+          ul, ol
+            :padding-left 2em
+            :list-style-position outside
+            :margin 0 0 1.625em 0
+          li ul, li ol
+            :margin 0 1.625em
+          p
+            :padding 0 0 0.8125em 0
+            :color #111
+            :font-weight 300
+      .meta-container
+        p.postmetadata
+          :font-weight 700
+      .comments-container
+        h3
+          :margin 2em 0
+          :color #222
+          :font-size 1.2em
+          :font-weight 700
+        ol.commentlist
+          small.commentmetadata
+            :display block
+            :margin-bottom 1em
+          p, li p
+            :font-weight 400
+            :margin 10px 5px 10px 0
+          p a
+            :font-weight 400
+          cite, cite a    
+            :font-weight 700
+            :font-style normal
+            :font-size 1.1em
+          cite
+            :font-size 1.2em
+          ul
+            :margin 0
+          li
+            :margin 15px 0 10px
+            :padding 5px 5px 10px 10px
+            :min-height 100px
+            +no-bullets
+            .avatar
+              :float right
+              :margin-right 10px
+            p img
+              :max-width 100%
+              :border-style none 
+              :padding 0
+            ul li
+              :font-size 1em
+              :margin-right -5px
+              :margin-left 10px
+        li.bypostauthor
+          :background-color= !nav_bg
+          :color #000
+          a, p, p a
+            :color #000
+            a:hover
+              :color= !hover
+        // li.byuser
+      .press-content
+        .entry-content
+          +column(19, true)
+    .subpage-sidebar
+      +column(4, true)
+      :margin-bottom 5em
+      h2, legend
+        :font-weight 700
+        :margin-bottom 0.1em
+        :color #000
+        :font-size 1.8em
+      ul
+        +pretty-bullets("/images/bullet.png", 6px, 3px)
+        :line-height 1.8em
+        +column(4, true)
+        :margin-left -1em
+        li a, li a:visited, li a:active
+          :font-size 1.0em
+          :color= !sub
+          :font-weight 700
+        li a:hover
+          :color #000
+      div.categories
+        :margin-top -0.5em
+      form#searchform
+        :margin-bottom 2em
+        input#s
+          :width 169px
+      fieldset
+        :border none
+        :padding 0
+      label
+        :display block
+      #mc_display_rewards
+        :text-align left
+        :font-size 0.8em
+        &:before
+          :content "List "
+      #mc_signup_container
+        :margin 1em 0
+        form#mc_signup_form
+          :text-align left
+          input.mc_input
+            width: 169px
+          fieldset.mc_custom_border
+            :padding 0
+            :text-align left
+            legend
+              :padding 0
+              :text-align left
+            .mc_signup_submit
+              :text-align left
+      // Lightening the sidebar
+      li, li a, #mc_display_rewards
+        :color #929292
+        &:hover
+          :color #000
+      .sidebar-cat ul li.cat-item a, .sidebar-cat ul li a
+        :color #929292
+        &:hover
+          :color #000
+      .sidebar-cat
+        #mc_signup_container
+          form#mc_signup_form
+            :padding 0
+            .mc_signup_submit
+              :text-align left
+              :padding 0.5em 0
+            input
+              :margin-left 0
+            .mc_var_label
+              :margin-left 0
+      h2, legend
+        :color #5F5F5F
+      label
+        :color #7F7F7F
+body.press
+  #content
+    .lower
+      +column(20, true)
+body.sub
+  #content.content
+    .lower
+      h1
+        :font-weight 700
+      p
+        :font-weight 400
+        :margin-bottom 1em
+body, body.home, body.sub, body.main, body.blog
+  #content
+    :text-align left
+    .lower
+      a:hover
+        :color #000
+    #footer
+      :color= !slightgr
+      +container
+      :float left
+      :margin 4em 0 2em 0
+      p
+        :font-weight 400
+        :color= !slightgr
+        :display inline
+        :margin-right 1em
+      a
+        :color= !slightgr
+        &:hover, &:active
+          :color #000
+      hr
+        +colruler
+        :color= !slightgr
+        :background= !slightgr
+        :margin 0 auto 1em
+        :width 97%
+        :height 1px
+      .wp-footer
+        :margin-top 2em
+        img
+          :margin-left 2em
+
+body.hoverbg
+  :background url("/images/bg-grass.jpg") repeat-x scroll -37px 82px
