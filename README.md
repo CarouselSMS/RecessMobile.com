@@ -1,4 +1,4 @@
-### [RecessMobile.com](http://recessmobile.com)
+### The former Recess Mobile home page
 
 Uses [Typus](https://github.com/fesplugas/typus). 
 
