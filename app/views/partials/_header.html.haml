@@ -1,0 +1,16 @@
+#header
+  #logo
+    %h1= link_to @headers.main_header, root_path
+    %h2= link_to @headers.sub_header, root_path
+  #nav
+    %ul.sub
+      %li.press= link_to_section :publications, "Press", publications_path
+      %li.about= link_to_section :about_us, "About", about_us_path
+      %li.contact= link_to_section :contacts, "Contact", contacts_path
+      %li.blog= link_to 'Blog', 'http://www.recessmobile.com/blog', :title => 'The Recess blog', :class => "blog #{'active' if @blog}"
+      -#%li.subpage= link_to_section :subpage_slug, "subpage", subpage_path('subpage_slug')
+    %ul.main
+      %li.services= link_to_section :services, "Services", services_path
+      %li.technology= link_to_section :technologies, "Technology", technologies_path
+      %li.products= link_to_section :products, "Products", products_path
+      -#%li.mainpage= link_to_section :mainpage_slug, "mainpage", subpage_path('mainpage_slug')

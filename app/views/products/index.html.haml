@@ -1,0 +1,19 @@
+- @group = "main"
+- section :products
+- @page_title = "SMS Applications - Recess products solve real life problems"
+
+.upper
+  .page-header
+    %h2.products= @products_header
+    %h3
+      %strong
+        = @products_text
+
+  .product-list
+    %h5 Our Products:
+    %ul
+      - @products.each do |product|
+        %li= link_to product.headline, products_path + "##{product.seo_title}"
+                
+.lower
+  = render @products

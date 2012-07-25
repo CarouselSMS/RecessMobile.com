@@ -1,0 +1,19 @@
+- @group = "main"
+- @page_title = "SMS APIs + a Flexible Messaging Platform"
+- section :technologies
+
+.upper
+  .page-header
+    %h2.technology= @technology_header
+    %h3
+      %strong
+        = @technology_text
+
+  .product-list
+    %h5 Our Technology:
+    %ul
+      - @technologies.each do |technology|
+        %li= link_to technology.headline, technologies_path + "##{technology.seo_title}"
+                
+.lower
+  = render @technologies

@@ -1,0 +1,15 @@
+# Typus Roles Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+admin:
+  Product: create, read, update, delete
+  Technology: create, read, update, delete
+  Service: create, read, update, delete
+  Publication: create, read, update, delete
+  AboutNote: create, read, update, delete
+  Text: create, read, update, delete
+  Header: create, read, update, delete
+  Mainpage: create, read, update, delete
+  Item: create, read, update, delete
+  Subpage: create, read, update, delete

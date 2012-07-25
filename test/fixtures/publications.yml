@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  source_name: MyString
+  source_link: MyString
+  author_name: MyString
+  author_link: MyString
+  summary: MyText
+  date: 2010-09-27
+
+two:
+  source_name: MyString
+  source_link: MyString
+  author_name: MyString
+  author_link: MyString
+  summary: MyText
+  date: 2010-09-27

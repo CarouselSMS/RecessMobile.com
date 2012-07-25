@@ -1,0 +1,21 @@
+- @group = "sub"
+- @page_title = "Information for + by the Media"
+- section :publications
+
+.upper 
+  .fat-headline
+    %h2.press= @press_header
+
+.lower
+  .press-content
+    - @publications.each do |publication|
+      .entry-header
+        %h2= link_to publication.source_name, publication.source_link
+        %h2.author
+          - if publication.author_link
+            = link_to publication.author_name, publication.author_link
+          - elsif publication.author_name
+            = publication.author_name
+                        
+        %h2.date= publication.date.strftime('%b %d %Y')
+        .entry-content= textilize(publication.summary).html_safe

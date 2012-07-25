@@ -1,0 +1,51 @@
+- @group = "home"
+- @page_title = "SMS Integration + Mobile Application Development"
+
+- cyclerLink = '/main/sms-mobile-applications/#contentID-'
+
+#cycler
+  %ul
+    %li
+      %a.antitow{ :href => "#{cyclerLink}AntiTow" }
+        AntiTow
+    %li
+      %a.recess{ :href => "#{cyclerLink}RecessPagingSystem" }
+        Recess Paging System
+    %li
+      %a.privatelabelsms{ :href => "#{cyclerLink}PrivateLabelSMSPlatform" }
+        Private Label SMS
+    %li
+      %a.shortcode{ :href => "#{cyclerLink}PrivateLabelSMSPlatform" }
+        Short Code
+    %li
+      %a.two-way{ :href => "/main/sms-mobile-technology/#contentID-PublicPrivateAPIs" }
+        Two-Way Messaging
+    %li
+      %a.vampireads{ :href => "#{cyclerLink}VampireAds" }
+        VampireAds
+    %li
+      %a.chat{ :href => "#{cyclerLink}VampireAds" }
+        Chat
+    %li
+      %a.survey{ :href => "/main/sms-mobile-technology/#contentID-SurveyGroupSMS" }
+        Survey
+    %li
+      %a.business-cards{ :href => "#{cyclerLink}HolmesCards" }
+        Business Cards
+        
+#cycler-nav
+  .previous
+    =link_to('previous', '#')
+  .next
+    =link_to('next', '#')
+
+.columns
+  .col1
+    %h4= @columns.home_first_header
+    = textilize(@home_page.home_first_text).html_safe
+  .col2
+    %h4= @columns.home_second_header
+    = textilize(@home_page.home_second_text).html_safe
+  .col3
+    %h4= @columns.home_third_header
+    = textilize(@home_page.home_third_text).html_safe

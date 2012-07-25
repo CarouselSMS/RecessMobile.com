@@ -1,0 +1,19 @@
+- @group = "main"
+- @page_title = "Custom SMS Development + Integration"
+- section :services
+
+.upper
+  .page-header
+    %h2.services= @services_header
+    %h3
+      %strong
+        = @services_text
+
+  .product-list
+    %h5 Our Services:
+    %ul
+      - @services.each do |service|
+        %li= link_to service.headline, services_path + "##{service.seo_title}"
+                
+.lower
+  = render @services

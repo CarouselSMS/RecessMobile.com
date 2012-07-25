@@ -1,51 +1,93 @@
-ActionController::Routing::Routes.draw do |map|
-  map.namespace('cms') {|cms| cms.content_blocks :technologies }
+Typusapp::Application.routes.draw do
+  # resources :about_notes
 
-  map.namespace('cms') {|cms| cms.content_blocks :services }
+  # resources :publications, :only => :index
 
-  map.namespace('cms') {|cms| cms.content_blocks :products }
+  # resources :services, :only => :index
 
-  map.routes_for_browser_cms
+  # resources :technologies, :only => :index
 
-  # The priority is based upon order of creation: first created -> highest priority.
+  # resources :products, :only => :index
+
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
 
   # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
+  match 'services'     => redirect('/sms-mobile-services')
+  match 'technologies' => redirect('/sms-mobile-technology')   
+  match 'products'     => redirect('/sms-mobile-applications')  
+
+  match 'main/sms-mobile-services/'     => redirect('/sms-mobile-services')
+  match 'main/sms-mobile-technology/'   => redirect('/sms-mobile-technology')
+  match 'main/sms-mobile-applications/' => redirect('/sms-mobile-applications')
+
+  match 'sub/recess-press-news' => redirect('/recess-press-news')
+  match 'sub/about-us' => redirect('/about-us')
+  match 'sub/contact-us' => redirect('/contact')
+
+  get 'main/:slug' => 'mainpages#show', :as => :mainpage
+  get 'sub/:slug' => 'subpages#show', :as => :subpage
+
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
+  match 'sms-mobile-services'     => 'services#index', :as => :services
+  match 'sms-mobile-technology'   => 'technologies#index', :as => :technologies
+  match 'sms-mobile-applications' => 'products#index', :as => :products
+
+  match 'about-us' => 'about_notes#index', :as => :about_us
+  match 'recess-press-news' => 'publications#index', :as => :publications
+  match 'contact' => 'pages#contacts', :as => :contacts
+  match 'privacy' => 'pages#privacy', :as => :privacy
+  match 'terms' => 'pages#terms', :as => :terms
   # This route can be invoked with purchase_url(:id => product.id)
 
+  match 'header' => 'partials#header', :as => :header
+  match 'footer' => 'partials#footer', :as => :footer
+
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
+  #   resources :products
 
   # Sample resource route with options:
-  #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
 
   # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
   # Sample resource route with more complex sub-resources
-  #   map.resources :products do |products|
-  #     products.resources :comments
-  #     products.resources :sales, :collection => { :recent => :get }
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', :on => :collection
+  #     end
   #   end
 
   # Sample resource route within a namespace:
-  #   map.namespace :admin do |admin|
-  #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-  #     admin.resources :products
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
   #   end
 
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  root :to => "pages#index"
 
   # See how all your routes lay out with "rake routes"
 
-  # Install the default routes as the lowest priority.
-  # Note: These default routes make all actions in every controller accessible via GET requests. You should
-  # consider removing or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  # match ':controller(/:action(/:id(.:format)))'
 end

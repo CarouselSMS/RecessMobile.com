@@ -1,0 +1,9 @@
+- @group = "sub"
+- @page_title = @page.title
+- section @page.slug.to_sym
+
+.upper
+  .fat-headline
+    %h2.contact= @page.title
+.lower
+  .content= textilize(@page.content).html_safe

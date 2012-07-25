@@ -1,0 +1,14 @@
+- @group = "sub"
+- section :about_us
+- @page_title = "Why/When/What/How SMS + Mobile?"
+
+.upper
+  .fat-headline
+    %h2.about= @about_header
+
+.lower
+  - @about_notes.each do |note|
+    .item
+      .about.item-description
+        %h3{:id => note.seo_title, :class => 'about' }= note.title
+        = textilize(note.content).html_safe

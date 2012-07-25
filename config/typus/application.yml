@@ -1,0 +1,105 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Product:
+  fields:
+    default: headline, link, position
+    form: headline, description, link, image
+  order_by: position
+  relationships: 
+  filters: 
+  search: 
+  application: CMS
+
+Technology:
+  fields:
+    default: headline, position
+    form: headline, position, image, description
+  order_by: position
+  relationships: 
+  filters: 
+  search: 
+  application: CMS
+  
+Service:
+  fields:
+    default: headline, position
+    form: headline, position, description
+  order_by: position
+  relationships: 
+  filters: 
+  search: 
+  application: CMS
+  
+Publication:
+  fields:
+    default: source_name, source_link, author_name, author_link, date
+    form: source_name, source_link, author_name, author_link, summary, date
+  order_by: 
+  relationships: 
+  filters: 
+  search: 
+  application: CMS
+
+AboutNote:
+  fields:
+    default: title
+    form: title, content
+  order_by: 
+  relationships: 
+  filters: 
+  search: title
+  application: CMS
+
+Text:
+  fields:
+    default: products_text, services_text, technology_text, contacts_text, home_first_text, home_second_text, home_third_text, footer_text
+    form: products_text, services_text, technology_text, contacts_text, home_first_text, home_second_text, home_third_text, footer_text
+  order_by: 
+  relationships: 
+  filters: 
+  search: 
+  application: CMS
+  
+Header:
+  fields:
+    default: products, technology, services, press, about, contact, main_header, sub_header, home_first_header, home_second_header, home_third_header
+    form: products, technology, services, press, about, contact, main_header, sub_header, home_first_header, home_second_header, home_third_header
+  order_by: 
+  relationships: 
+  filters: 
+  search: 
+  application: CMS
+
+Mainpage:
+  fields:
+    default: slug, title
+    form: slug, title, content
+  order_by:
+  relationships:
+  filters:
+  search: slug, title
+  application: Main Pages
+
+Item:
+  fields:
+    default: headline
+    form: headline, description, mainpage
+  order_by:
+  relationships:
+  filters:
+  search: headline
+  application: Main Pages
+
+Subpage:
+  fields:
+    default: slug, title
+    form: slug, title, content
+  order_by:
+  relationships:
+  filters:
+  search: slug, title
+  application: Sub Pages
+    
+    

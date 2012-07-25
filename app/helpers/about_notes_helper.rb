@@ -1,0 +1,2 @@
+module AboutNotesHelper
+end

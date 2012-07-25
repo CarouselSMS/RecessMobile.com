@@ -1,0 +1,27 @@
+- @group = "sub"
+- @page_title = "Contact Us - we take in pride in being approachable"
+- section :contacts
+
+.upper
+  .fat-headline
+    %h2.contact= @contact_header
+.lower
+  .contactForm
+    .form-content
+      = render :partial => "wufoo-form_js"
+  .contactDetails
+    %h2 Or reach us at...
+    %p You can call or text:
+    %h4 (810) 3RECESS &nbsp; | &nbsp;
+    %h4 (810) 373&ndash;2377
+    .googlevoice
+      = render :partial => "google-voice"
+    %p Write or visit:
+    %h5
+      %a{ :href => "http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=595+S.+3rd+St.,+Columbus,+OH+43215&amp;sll=39.962532,-82.998&amp;sspn=0.009588,0.019312&amp;ie=UTF8&amp;ll=39.950823,-82.995658&amp;spn=0.00959,0.019312&amp;z=16&amp;iwloc=A", :title => "Google Maps" }<
+        Recess Mobile, Inc.
+        %br
+        595 1/2 S 3rd Street
+        %br
+        Columbus, OH 43215
+    = textilize(@contacts_text).html_safe

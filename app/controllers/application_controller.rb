@@ -1,10 +1,10 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  protect_from_forgery
+  before_filter :load_texts
+  
+  private
+  def load_texts
+    @headers = Header.select(['main_header', 'sub_header']).first
+    @footer_text = Text.select('footer_text').first.footer_text
+  end
 end

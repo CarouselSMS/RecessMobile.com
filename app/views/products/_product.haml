@@ -1,0 +1,12 @@
+.item
+  .item-image
+    = image_tag product.image.url
+  .item-description.products
+    %h3{ :id => product.seo_title }= product.headline
+    %p= textilize(product.description).html_safe
+    %h4
+      - if product.link.present?
+        = link_to product.link_title, product.absolute_link , :title => product.headline
+      - else
+        More information coming soon.
+    = link_to 'Back to top', '#header'

@@ -1,0 +1,20 @@
+- @group = "main"
+- @page_title = @page.title
+- section @page.slug.to_sym
+
+.upper
+  .page-header
+    %h2.title= @page.title
+    %h3
+      %strong
+        = @page.content
+
+  .product-list
+    -#%h5 ???:
+    %ul
+      - @page.items.each do |item|
+        %li= link_to item.headline, "##{item.seo_title}"
+                
+.lower
+  - @page.items.each do |item|
+    = render :partial => 'item', :locals => {:item => item}

@@ -1,0 +1,5 @@
+.item
+  .item-description.services
+    %h3{ :id => service.seo_title }= service.headline
+    %p= textilize(service.description).html_safe
+    = link_to 'Back to top', '#header'

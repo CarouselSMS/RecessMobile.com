@@ -1,0 +1,7 @@
+.item
+  .item-image
+    = image_tag technology.image.url
+  .item-description.products
+    %h3{ :id => technology.seo_title }= technology.headline
+    %p= textilize(technology.description).html_safe
+    = link_to 'Back to top', '#header'

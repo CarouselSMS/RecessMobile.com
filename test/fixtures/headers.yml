@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  products: MyString
+  technology: MyString
+  services: MyString
+  press: MyString
+  about: MyString
+  contact: MyString
+  main_header: MyString
+  sub_header: MyString
+  home_first_header: MyString
+  home_second_header: MyString
+  home_third_header: MyString
+
+two:
+  products: MyString
+  technology: MyString
+  services: MyString
+  press: MyString
+  about: MyString
+  contact: MyString
+  main_header: MyString
+  sub_header: MyString
+  home_first_header: MyString
+  home_second_header: MyString
+  home_third_header: MyString

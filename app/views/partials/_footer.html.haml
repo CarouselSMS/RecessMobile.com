@@ -1,0 +1,14 @@
+#footer
+  %hr/
+  .footer
+    -#= textilize(@footer_text).html_safe
+    %p
+      &copy; Recess Mobile, Inc. #{Time.now.year} &mdash;
+      %em
+        all rights reserved.
+    %p
+      (810) 3&ndash;RECESS
+    %ul
+      %li.contact= link_to_section :contacts, "Contact", contacts_path
+      %li.privacy= link_to_section :privacy, "Privacy Policy", privacy_path
+      %li.terms= link_to_section :terms, "Terms of Service", terms_path
