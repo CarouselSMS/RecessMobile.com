@@ -1,8 +1,8 @@
 # Models
 
-This is an example of a **Typus** enabled model with all available
-options. You can use this example to customize your YAML files which
-only have set the most common settings.
+This is an example of a **Typus** enabled model with all available options. You
+can use this example to customize your YAML files which only have set the most
+common settings.
 
     Post:
       fields:
@@ -26,7 +26,7 @@ only have set the most common settings.
         index: cleanup
         edit: send_as_newsletter
         show: rebuild
-      export: csv, xml, pdf
+      export: csv, xml
       order_by: created_at
       relationships:
       filters: is_published?, created_at, category_id
@@ -34,10 +34,10 @@ only have set the most common settings.
       application: Application
       description: Some text to describe the model
       options:
+        action_after_save: :index
         default_action_on_item: show
         end_year: 2015
         form_rows: 25
-        action_after_save: :index
         minute_step: 15
         nil: 'nil'
         only_user_items: true
@@ -48,9 +48,9 @@ Note: To define namespace models use :: as a separator. (i.e. Delayed::Job)
 
 # Roles
 
-In this file you can configure the actions available for each of
-your models on the application. You can also use the 'all' shortcut
-to allow the user the access to all actions.
+In this file you can configure the actions available for each of your models on
+the application. You can also use the 'all' shortcut to allow the user the
+access to all actions.
 
     admin:
       Post: create, read, update, delete
@@ -61,10 +61,8 @@ to allow the user the access to all actions.
       Post: create, read, update
       Category: read, update
 
-You can also define `resources` which are not related to a model,
-for example to control MemCached or see the Starling queue
-statistics.
+You can also define `resources` which are not related to a model, for example
+to control `Redis`.
 
     admin:
-      Starling: index
-      MemCached: index, cleanup
+      Redis: index, flush_all
